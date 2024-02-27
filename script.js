@@ -26,7 +26,7 @@ fromTranslate.addEventListener('input',function(){
     fromTranslateContent = languageOptions[0].value;
     totranslateContent = languageOptions[1].value;
 
-    let tranlateLink = `https://api.mymemory.translated.net/get?q=${content}!&langpair=${fromTranslateContent}|${totranslateContent}`;
+    let tranlateLink = `https://api.mymemory.translated.net/get?q=${content}&langpair=${fromTranslateContent}|${totranslateContent}`;
 
     fetch(tranlateLink).then(translate => translate.json()).then(data=>{
         toTranslate.value = data.responseData.translatedText;
